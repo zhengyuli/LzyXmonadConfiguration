@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#---------------------------------------------------------------------------------
+# Name: xmonad.start
+# Purpose: Xmonad start script
+#
+# Time-stamp: <2014-07-15 02:18:55 Tuesday by lzy>
+#
+# Author: zhengyu li
+# Created: 2014-03-26
+#
+# Copyright (c) 2014 zhengyu li <lizhengyu419@gmail.com>
+#---------------------------------------------------------------------------------
+
+source /etc/profile
+export LC_ALL=C  
+
+xrdb -merge .Xresources
+
+trayer --edge top --align right --SetDockType true --expand true --width 7 --transparent true --tint 0x000000 --alpha 0 --height 21&
+
+if [ -x /usr/bin/xcompmgr ]; then
+    xcompmgr -c -C&
+fi
+
+if [ -x /usr/bin/nm-applet ]; then
+    nm-applet --sm-disable&
+fi
+
+if [ -x /usr/bin/wallpaper.sh ]; then
+    wallpaper.sh&
+fi
+
+rm ~/.xmonad/xmonad* -rf
+
+if xrandr|grep LVDS|grep " connected"; then
+    if xrandr|grep VGA|grep " connected"; then
+        cp ~/.xmonad/backup/xmonad-dual-screen.hs ~/.xmonad/xmonad.hs
+        if xrandr|grep VGA1; then
+            xrandr --output LVDS1 --auto --left-of VGA1
+        else
+            xrandr --output LVDS1 --auto --left-of VGA2
+        fi
+    else
+        cp ~/.xmonad/backup/xmonad.hs ~/.xmonad/xmonad.hs
+    fi
+else
+    cp ~/.xmonad/backup/xmonad.hs ~/.xmonad/xmonad.hs
+fi
+
+exec xmonad

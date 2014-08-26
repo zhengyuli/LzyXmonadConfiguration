@@ -1,0 +1,138 @@
+!!! xft font config
+Xft.dpi: 105
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xcursor.theme: Pulse-Glass
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! xterm config
+!!look and feel
+XTerm.termName: xterm-256color
+XTerm.geometry: 80x36
+XTerm*scrollBar: false
+XTerm*rightScrollBar: true
+XTerm*jumpScroll: true
+XTerm*SaveLines: 3000
+XTerm*loginshell: true
+XTerm*cursorBlink: false
+XTerm*background: black
+XTerm*foreground: green
+XTerm.borderLess: true
+XTerm*colorUL: yellow
+XTerm*colorBD: white
+
+!!fix alt key input
+XTerm*eightBitInput: false
+XTerm*altSendsEscape: true
+
+!!mouse selecting to copy, ctrl-v to paste
+!!Ctrl p to print screen content to file
+XTerm*VT100.Translations: #override \
+                          Ctrl Shift <KeyPress> c:  select-end(PRIMARY,CLIPBOARD,CUT_BUFFER0) \n\
+                          Ctrl Shift <KeyPress> v:  insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n\
+                          <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+
+!!font and locale
+XTerm*locale: true
+XTerm.utf8: true
+XTerm*utf8Title: true
+XTerm*fontMenu*fontdefault*Label: Default
+XTerm*faceName: Monaco:antialias=True:pixelsize=16
+XTerm*boldFont: Monaco:style=Bold:pixelsize=16
+XTerm*faceNameDoublesize: WenQuanYi Micro Hei:antialias=True:pixelsize=16
+XTerm*xftAntialias: true
+XTerm*cjkWidth: false
+XTerm*faceSize: 12
+XTerm*faceSize1: 12
+XTerm*faceSize2: 12
+XTerm*faceSize3: 12
+XTerm*faceSize4: 12
+XTerm*faceSize5: 12
+XTerm*faceSize6: 12
+
+*XTerm*color0: black
+*XTerm*color1: red3
+*XTerm*color2: springgreen
+*XTerm*color3: wheat3
+*XTerm*color4: navy
+*XTerm*color5: green
+*XTerm*color6: steelblue1
+*XTerm*color7: gray85
+*XTerm*color8: gray10
+*XTerm*color9: orangered2
+*XTerm*color10: chartreuse3
+*XTerm*color11: lightgoldenrod2
+*XTerm*color12: skyblue1
+*XTerm*color13: pink1
+*XTerm*color14: lightblue1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! config for urxvt
+!!general setting
+URxvt.title: lzy-urxvt
+URxvt.visualBell: False
+URxvt.urlLauncher: chromium
+URxvt.matcher.button: True
+URxvt.underlineURLs: True
+URxvt.multichar_encoding: utf-8
+URxvt.cutchars: "()*,<>[]{}|'"
+
+!!scroll setting
+URxvt.scrollBar: False
+URxvt.saveLines: 5000
+
+!!font setting
+URxvt*font: xft:Monaco:antialias=True:pixelsize=16,\
+            xft:WenQuanYi Micro Hei:antialias=True:pixelsize=16
+URxvt*mfont: xft:Monaco:antialias=True:pixelsize=16,\
+             xft:WenQuanYi Micro Hei:antialias=True:pixelsize=16
+URxvt*boldfont: xft:Monaco:antialias=True:pixelsize=16:Bold,\
+                xft:WenQuanYi Micro Hei:antialias=True:pixelsize=16:Bold
+URxvt*italicFont: xft:Monaco:antialias=True:pixelsize=16:Bold,\
+                  xft:WenQuanYi Micro Hei:antialias=True:pixelsize=16:Bold
+URxvt*bolditalicFont: xft:Monaco:antialias=True:pixelsize=16:Bold,\
+                      xft:WenQuanYi Micro Hei:antialias=True:pixelsize=16:Bold
+
+!!key bindings
+URxvt.meta8: false
+URxvt.iso14755: false
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
+URxvt.keysym.M-w: perl:clipboard:copy
+URxvt.keysym.C-y: perl:clipboard:paste
+
+!!input Method setting
+!Urxvt.inputMethod: SCIM
+URxvt.imLocale: zh_CN.UTF-8
+URxvt.preeditType: OverTheSpot
+
+!!color setting
+URxvt.foreground: green
+URxvt.colorBD: yellow
+URxvt.colorUL: green
+URxvt.cursorColor: skyblue
+URxvt.color0: black
+URxvt.color1: red3
+URxvt.color2: springgreen
+URxvt.color3: wheat3
+URxvt.color4: navy
+URxvt.color5: green
+URxvt.color6: steelblue1
+URxvt.color7: gray85
+URxvt.color8: gray10
+URxvt.color9: orangered2
+URxvt.color10: chartreuse3
+URxvt.color11: lightgoldenrod2
+URxvt.color12: skyblue1
+URxvt.color13: pink1
+URxvt.color14: lightblue1
+
+!!bg transparent setting
+URxvt.inheritPixmap: True
+URxvt.tintCddolor: white
+URxvt.shading: 0
+URxvt.depth: 32
+URxvt.background: rgba:0000/0000/0000/dddd
